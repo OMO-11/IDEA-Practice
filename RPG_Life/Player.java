@@ -1,7 +1,5 @@
 package RPG_Life;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Player implements Serializable{
     private String name;

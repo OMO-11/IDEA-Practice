@@ -1,19 +1,13 @@
-import java.io.*;
+import java.time.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        int[] arr = {1,3,5,7,9};
-        for(int i = 0; i < arr.length; i++){
-            for(int j = i; j < arr.length - i; j++){
-                if(arr[j] > arr[j+1]){
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                }
-            }
-        }
-        for(int i = 0; i < arr.length; i++){
-            System.out.print(arr[i] + " ");
-        }
+    public static void main(String[] args) {
+        LocalDateTime start = LocalDateTime.of(2019, 11, 19, 8, 15, 0);
+        LocalDateTime end = LocalDateTime.of(2020, 1, 9, 19, 25, 30);
+        Duration d = Duration.between(start, end);
+        System.out.println(d); // PT1235H10M30S
+
+        Period p = LocalDate.of(2019, 11, 19).until(LocalDate.of(2020, 1, 9));
+        System.out.println(p); // P1M21D
     }
 }
